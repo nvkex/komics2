@@ -1,0 +1,194 @@
+<!Doctype html>
+<html>
+<head>
+	<title>Komics</title>
+</head>
+
+<script>
+	var modeFlag = 0;
+
+	function switchModes(){
+
+		var x = document.getElementById("hdr");
+		var y = document.getElementsByClassName("hdr-contnt");
+		var z = document.getElementsByClassName("caption");
+		if(modeFlag == 0){
+			//switch to dark
+			x.style.backgroundColor = "#737373";
+			document.body.style.backgroundColor = "#262626";
+			var i =0;
+			while(z[i] != null){
+				z[i].style.backgroundColor = "#737373";
+				//z[i].style.color = "#008ae6";
+				i++;
+			}
+
+			i = 0;
+			while(y[i] != null){
+				y[i].style.color = "black";
+				i++;
+		    }
+			modeFlag = 1;
+			document.getElementById("swButton").innerHTML = "Light Mode";
+
+		}
+		else{
+			//switch to light
+			x.style.backgroundColor = "#00664d";
+			document.body.style.backgroundColor = "#e6e6e6";
+			var i =0;
+			while(z[i] != null){
+				z[i].style.backgroundColor = "#008ae6";
+				//z[i].style.color = "white";
+				i++;
+			}
+
+			i = 0;
+			while(y[i] != null){
+				y[i].style.color = "white";
+				i++;
+		    }
+			modeFlag = 0;
+			document.getElementById("swButton").innerHTML = "Dark Mode";
+
+		}
+	}
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito|Raleway&display=swap" rel="stylesheet">
+<style>
+	body{
+		font-family: 'Nunito', sans-serif;
+		transition: 2s;
+		background-color: #e6e6e6;
+	}
+	
+	a:link { 
+		text-decoration: none;
+	}
+	a:visited{
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: none;
+	}
+	a:active {
+		text-decoration: none;
+	}
+
+	td{
+		padding:0px 50px 0px 50px;
+	}
+	.headr{
+		transition: 2s;
+		z-index: 1;
+		font-family: 'Raleway', sans-serif;
+		background-color : #00664d;
+		border-radius: 4px 4px 4px 0px;
+		width : 100%;
+		height : 44px;
+		padding-top: 20px;
+	}
+
+	.hdr-contnt{
+		transition: 0.6s;
+		border-radius: 10px 10px 0 0 ;
+		vertical-align: center;
+		color: white;
+		padding: 20px;
+		font-size: 20px;
+	}
+
+	.hdr-contnt:hover{
+		background-color: #008ae6;
+
+	}
+
+	.side-panel{
+		cursor: pointer;
+		transition: 1s;
+		border-radius: 0 0 15px 15px;
+		margin-right: 1423px;
+		background-color: grey;
+	}
+
+	.side-panel:hover{
+		background-color: #404040;
+	}
+
+	.switch-button{
+		margin: 4px;
+		font-family: 'Josefin Sans', sans-serif;
+		color: white;
+ 		border: 0px;
+		background-color: inherit;
+	}
+
+	.switch-button:hover{
+		cursor: pointer;
+	}
+
+	.polaroid{
+		transition: 0.2s;
+		cursor: pointer;
+		border:1px solid grey;
+		border-radius: 20px;
+	}
+
+	.polaroid:hover{
+		box-shadow: 0 4px 8px 0 rgba(115, 115, 115, 0.2), 0 6px 20px 0 rgba(115, 115, 115, 0.19);
+	}
+
+	.caption{
+		padding: 10px;
+		letter-spacing: 2px;
+		background-color: #008ae6;
+	}
+
+	.caption a{
+
+		transition: 0.5s;
+		font-family: 'Nunito', sans-serif;
+		color:white;
+	}
+	.caption:hover{
+		letter-spacing: 5px;
+
+	}
+</style>
+
+
+
+<body>
+
+	<div class = "headr" id = "hdr">
+		<a href = "#" class = "hdr-contnt" id = "hdrc">Home</a>
+		<a href = "#" class = "hdr-contnt" id = "hdrc">Comics</a>
+		<a href = "#" class = "hdr-contnt" id = "hdrc">Manga</a>
+		<a href = "#" class = "hdr-contnt" id = "hdrc">Contacts</a>
+	</div>
+
+	<div class = "side-panel" id = "sidePanel" align="center">
+		<button class = "switch-button" id = "swButton" onclick = "switchModes()">Dark Mode</button>
+	</div>
+	<table border = "0" cellspacing="100" align="center">
+		<tr>
+			<td>
+				<div class = "polaroid">
+					<img  height = "300" width = "225" src = "comic.png">
+					<p align="center" class = "caption"><a href = "comics.html">COMICS</a></p>
+				</div>
+			</td>
+
+			<td>
+				<div class = "polaroid">
+					<img  height = "300" width = "225" src = "manga.png">
+					<p align="center" class = "caption"><a href = "manga.html">MANGA</a></p>
+				</div>
+			</td>
+
+		</tr>
+	</table>
+</body>
+
+</html>
